@@ -3,12 +3,20 @@
   "candidate": "Russell Dudek",
   "thesis": "Make AI transformation survive contact with the work.",
   "live_target": "https://russelldudek.github.io/Valon/",
-  "artifacts": [
+  "routes": [
     {"path": "index.html", "type": "interactive candidate vision"},
-    {"path": "docs/Russell-Dudek-Valon-Resume.pdf", "type": "resume", "pages": 2},
-    {"path": "docs/Russell-Dudek-Valon-Cover-Letter.pdf", "type": "cover letter", "pages": 1},
-    {"path": "docs/Russell-Dudek-Valon-Interview-Brief.pdf", "type": "interview brief", "pages": 1},
-    {"path": "docs/Russell-Dudek-Valon-90-Day-Plan.pdf", "type": "90-day plan", "pages": 1},
-    {"path": "docs/Russell-Dudek-Valon-Field-Build-Brief.pdf", "type": "signature operating brief", "pages": 1}
+    {"path": "resume.html", "type": "native online resume"},
+    {"path": "cover-letter.html", "type": "native online cover letter"},
+    {"path": "interview-brief.html", "type": "native online interview brief"},
+    {"path": "entry-plan.html", "type": "native online 90-day plan"},
+    {"path": "field-build-brief.html", "type": "native online operating brief"}
+  ],
+  "source": ["styles.css", "documents.css", "brand-tokens.css", "app.js", "brand-intelligence.md", "role-intelligence.md", "campaign-audit.md", "qa/site-audit.py", "qa/qa-results.json"],
+  "downloads": [
+    {"path": "docs/Russell-Dudek-Valon-Resume.pdf", "pages": 2},
+    {"path": "docs/Russell-Dudek-Valon-Cover-Letter.pdf", "pages": 1},
+    {"path": "docs/Russell-Dudek-Valon-Interview-Brief.pdf", "pages": 1},
+    {"path": "docs/Russell-Dudek-Valon-90-Day-Plan.pdf", "pages": 1},
+    {"path": "docs/Russell-Dudek-Valon-Field-Build-Brief.pdf", "pages": 1}
   ]
 }

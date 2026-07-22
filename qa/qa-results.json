@@ -1,9 +1,27 @@
 {
-  "responsive": ["1440x900", "768x1024", "390x844", "320x800"],
-  "interaction": "passed",
-  "keyboard": "passed",
-  "rapid_selection_final_state": "passed",
-  "reduced_motion": "passed",
+  "campaign_state": "building_pending_corrected_live_verification",
+  "material_correction": {
+    "hero_restraint": "passed_local",
+    "headline_containment": "passed_local",
+    "buildline_geometry": "passed_local",
+    "cta_advancement": "passed_local",
+    "application_kit_discovery": "passed_local",
+    "native_online_documents": "passed_local"
+  },
+  "viewports": ["1440x900", "1280x800", "768x1024", "390x844", "320x800"],
+  "horizontal_overflow": 0,
+  "interaction": "passed_local",
+  "keyboard": "passed_local",
+  "rapid_selection_final_state": "passed_local",
+  "reset_to_baseline": "passed_local",
+  "reduced_motion": "passed_local",
+  "document_routes": {
+    "resume.html": "native_online_document_passed",
+    "cover-letter.html": "native_online_document_passed",
+    "interview-brief.html": "native_online_document_passed",
+    "entry-plan.html": "native_online_document_passed",
+    "field-build-brief.html": "native_online_document_passed"
+  },
   "pdf_pages": {
     "resume": 2,
     "cover_letter": 1,
@@ -11,6 +29,7 @@
     "entry_plan": 1,
     "field_build_brief": 1
   },
-  "candidate_facing_confidentiality": "passed",
-  "brand_asset_exception": "official original wordmark file could not be retrieved; no recreation was used"
+  "candidate_facing_confidentiality": "passed_local_zero_matches",
+  "brand_fidelity": "blocked_official_wordmark_asset_not_locally_retrieved",
+  "live_exact_head_verification": "pending"
 }
