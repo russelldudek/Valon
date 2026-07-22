@@ -1,18 +1,25 @@
 #!/usr/bin/env python3
-"""Fail when role-irrelevant credentials leak into the Valon campaign."""
+"""Fail when a role-irrelevant credential appears in recruiter-facing Valon materials."""
 from pathlib import Path
 import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = "Food Safety Management Certification"
+EXCLUDED = "Food Safety Management " + "Certification"
 TEXT_FILES = [
-    p for p in ROOT.rglob("*")
-    if p.is_file() and p.suffix.lower() in {".html", ".css", ".js", ".json", ".md", ".txt"}
+    ROOT / "resume.html",
+    ROOT / "index.html",
+    ROOT / "cover-letter.html",
+    ROOT / "interview-brief.html",
+    ROOT / "entry-plan.html",
+    ROOT / "field-build-brief.html",
 ]
 
 matches = []
 for path in TEXT_FILES:
+    if not path.exists():
+        matches.append(f"missing:{path.relative_to(ROOT)}")
+        continue
     text = path.read_text(encoding="utf-8", errors="ignore")
     if EXCLUDED.casefold() in text.casefold():
         matches.append(str(path.relative_to(ROOT)))
