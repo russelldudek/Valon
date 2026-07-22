@@ -25,6 +25,6 @@ The role posting and official Valon company, platform, about, and careers pages 
 
 ## Publication
 
-The site is designed for GitHub Pages at:
+The site is ready for GitHub Pages from `main` and `/ (root)` at:
 
 `https://russelldudek.github.io/Valon/`

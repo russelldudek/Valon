@@ -1,0 +1,14 @@
+{
+  "campaign": "Valon - Applied AI Strategist, New Ventures",
+  "candidate": "Russell Dudek",
+  "thesis": "Make AI transformation survive contact with the work.",
+  "live_target": "https://russelldudek.github.io/Valon/",
+  "artifacts": [
+    {"path": "index.html", "type": "interactive candidate vision"},
+    {"path": "docs/Russell-Dudek-Valon-Resume.pdf", "type": "resume", "pages": 2},
+    {"path": "docs/Russell-Dudek-Valon-Cover-Letter.pdf", "type": "cover letter", "pages": 1},
+    {"path": "docs/Russell-Dudek-Valon-Interview-Brief.pdf", "type": "interview brief", "pages": 1},
+    {"path": "docs/Russell-Dudek-Valon-90-Day-Plan.pdf", "type": "90-day plan", "pages": 1},
+    {"path": "docs/Russell-Dudek-Valon-Field-Build-Brief.pdf", "type": "signature operating brief", "pages": 1}
+  ]
+}

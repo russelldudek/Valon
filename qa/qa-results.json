@@ -1,0 +1,16 @@
+{
+  "responsive": ["1440x900", "768x1024", "390x844", "320x800"],
+  "interaction": "passed",
+  "keyboard": "passed",
+  "rapid_selection_final_state": "passed",
+  "reduced_motion": "passed",
+  "pdf_pages": {
+    "resume": 2,
+    "cover_letter": 1,
+    "interview_brief": 1,
+    "entry_plan": 1,
+    "field_build_brief": 1
+  },
+  "candidate_facing_confidentiality": "passed",
+  "brand_asset_exception": "official original wordmark file could not be retrieved; no recreation was used"
+}
