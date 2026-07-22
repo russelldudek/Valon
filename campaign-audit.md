@@ -6,7 +6,7 @@
 - Target role: Valon — Applied AI Strategist, New Ventures.
 - Candidate thesis: **Make AI transformation survive contact with the work.**
 
-## User-directed correction
+## User-directed geometry and document correction
 
 Observed defects:
 - the hero headline exceeded its grid column and visually crossed into the operating artifact;
@@ -33,6 +33,21 @@ Approved correction:
 - resume and cover letter retain reciprocal navigation.
 
 Prior rendered and live proof is invalidated by this material correction.
+
+## User-directed credential relevance correction
+
+Observed defect:
+- a verified credential that is relevant in other operating contexts did not strengthen the case for this forward-deployed applied-AI role.
+
+Approved correction:
+- removed the role-irrelevant credential from the online resume and downloadable resume PDF;
+- replaced the space with verified, role-relevant operating mechanisms, technical communication, launch, regulated-operations, and evidence-instrumentation content;
+- retained the credential only in the private candidate evidence record for campaigns where it is relevant.
+
+Regression coverage:
+- `qa/credential-audit.py` scans all recruiter-facing Valon routes and the downloadable resume PDF;
+- the audit fails if the excluded credential reappears or if the resume PDF is missing;
+- the regenerated resume remains exactly two pages.
 
 ## Regression coverage
 
@@ -67,17 +82,17 @@ Passed locally:
 - five native online document routes with no iframe viewer;
 - responsive document reflow at 1280, 390, and 320 pixels;
 - reciprocal resume/cover-letter navigation;
-- native same-origin PDF download links.
+- native same-origin PDF download links;
+- full-page visual review of the regenerated two-page resume;
+- zero excluded-credential matches in recruiter-facing HTML and resume PDF text.
 
 ## Documents and PDFs
 
-- Resume PDF: exactly 2 pages.
+- Resume PDF: exactly 2 pages; regenerated after the credential relevance correction.
 - Cover letter PDF: exactly 1 page.
 - Interview brief PDF: exactly 1 page.
 - 90-day plan PDF: exactly 1 page.
 - Field-to-Platform Buildline brief PDF: exactly 1 page.
-
-The material correction changes screen document delivery, not the already audited PDF content or pagination.
 
 ## Brand fidelity
 
