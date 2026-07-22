@@ -6,7 +6,8 @@
     "buildline_geometry": "passed_local",
     "cta_advancement": "passed_local",
     "application_kit_discovery": "passed_local",
-    "native_online_documents": "passed_local"
+    "native_online_documents": "passed_local",
+    "credential_relevance": "passed_local"
   },
   "viewports": ["1440x900", "1280x800", "768x1024", "390x844", "320x800"],
   "horizontal_overflow": 0,
@@ -29,6 +30,10 @@
     "entry_plan": 1,
     "field_build_brief": 1
   },
+  "resume_pdf_regenerated": true,
+  "resume_full_page_review": "passed_local",
+  "excluded_credential_matches": 0,
+  "credential_regression": "qa/credential-audit.py",
   "candidate_facing_confidentiality": "passed_local_zero_matches",
   "brand_fidelity": "blocked_official_wordmark_asset_not_locally_retrieved",
   "live_exact_head_verification": "pending"
