@@ -1,8 +1,8 @@
 name: Publish complete Valon candidate campaign
 
 on:
-  push:
-    branches: [main]
+  issues:
+    types: [opened]
   workflow_dispatch:
 
 permissions:
@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   publish:
+    if: github.event_name != 'issues' || github.event.issue.title == 'Publish complete Valon candidate campaign'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -23,6 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Verify and expand campaign package
@@ -38,22 +40,31 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Generate campaign PDFs
+      - name: Generate and validate campaign PDFs
         run: |
-          python -m pip install --disable-pip-version-check reportlab
+          python -m pip install --disable-pip-version-check reportlab pypdf
           python make_pdfs.py
           python make_compact_pdfs.py
-          test "$(pdfinfo docs/Russell-Dudek-Valon-Resume.pdf | awk '/Pages/{print $2}')" = "2"
-          test "$(pdfinfo docs/Russell-Dudek-Valon-Cover-Letter.pdf | awk '/Pages/{print $2}')" = "1"
-          test "$(pdfinfo docs/Russell-Dudek-Valon-Interview-Brief.pdf | awk '/Pages/{print $2}')" = "1"
-          test "$(pdfinfo docs/Russell-Dudek-Valon-90-Day-Plan.pdf | awk '/Pages/{print $2}')" = "1"
-          test "$(pdfinfo docs/Russell-Dudek-Valon-Field-Build-Brief.pdf | awk '/Pages/{print $2}')" = "1"
+          python - <<'PY'
+          from pypdf import PdfReader
+          expected = {
+              'docs/Russell-Dudek-Valon-Resume.pdf': 2,
+              'docs/Russell-Dudek-Valon-Cover-Letter.pdf': 1,
+              'docs/Russell-Dudek-Valon-Interview-Brief.pdf': 1,
+              'docs/Russell-Dudek-Valon-90-Day-Plan.pdf': 1,
+              'docs/Russell-Dudek-Valon-Field-Build-Brief.pdf': 1,
+          }
+          for path, pages in expected.items():
+              actual = len(PdfReader(path).pages)
+              assert actual == pages, f'{path}: expected {pages}, got {actual}'
+          PY
 
       - name: Replace staging with complete campaign on main
         shell: bash
         run: |
           set -euo pipefail
           rm -rf campaign-package
+          rm -f .publication-trigger
           rm -f .github/workflows/publish-campaign.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
